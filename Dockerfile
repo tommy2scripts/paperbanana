@@ -34,7 +34,7 @@ COPY configs/ configs/
 
 # Install the package (the wheel embeds prompts/, data/, configs/), then drop
 # the build context — it is fully duplicated inside site-packages.
-RUN pip install ".[google,openai,pdf]" && cd / && rm -rf /build
+RUN pip install ".[mcp,google,openai,pdf]" && cd / && rm -rf /build
 
 # Non-root runtime user; /work is the writable working directory where the CLI
 # reads inputs and writes the outputs/ folder (mount volumes here).
